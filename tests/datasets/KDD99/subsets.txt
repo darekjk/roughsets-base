@@ -1,0 +1,2 @@
+A - bez
+B - kolumny 1-2 (licząc od 1 jak w R), czyli: ["duration", "protocol_type"]

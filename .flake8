@@ -1,0 +1,12 @@
+[flake8]
+
+exclude = venv,docs,.git,__pycache__,.tox,.cache
+
+extend-ignore = E501,E266,F401,F841,E265,E402
+
+per-file-ignores =
+    tests/*:F405
+
+[pycodestyle]
+max_line_length = 120
+ignore = E501,E266,F401,F841,E265

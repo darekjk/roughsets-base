@@ -1,0 +1,54 @@
+.env.*
+
+__pycache__/
+.idea/*
+/*.pyc
+.vimrc
+.DS_store
+venv*
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Spxinx build documentation
+doc/_build/
+
+# Visual Studio Code
+.vscode/
+.history
+
+# JupyterLab
+.ipynb_checkpoints/

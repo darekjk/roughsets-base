@@ -1,0 +1,5 @@
+subset_id,region,indices
+0,positive,2 5
+0,boundary,0 1 3 4
+0,upper_approx,0 1 2 3 4 5
+0,negative,
