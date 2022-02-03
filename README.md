@@ -20,29 +20,29 @@ The library has included unit tests for different datasets, subsets and concepts
 
 
 
-Requirements
+Requirements  
 ------------
-Python >= 3.8
-OS: Linux, Windows
+Python >= 3.8  
+OS: Linux, Windows  
 
 
-Install from PyPi server
+Install from PyPi server  
 ------------------------
-pip install roughsets-base
+pip install roughsets-base  
 
 
-Build and install the library from source code
+Build and install the library from source code  
 ----------------------------------------------
-pip install --upgrade pip
-pip install --upgrade build
+pip install --upgrade pip  
+pip install --upgrade build  
 
 On linux:
-python3 -m build
+python3 -m build  
 
-On Windows:
-py -m build
+On Windows:  
+py -m build  
 
-pip install dist/roughsets_base-<version>-py3-none-any.whl
+pip install dist/roughsets_base-<version>-py3-none-any.whl  
 
 
 Install CI and dev tools
@@ -65,6 +65,7 @@ You can disable running tests for specific dataset in file test_dataset_X.py (X 
 For checking of unit tests' results was used algorithms from well known reference library:  
 https://www.rdocumentation.org/packages/RoughSets/topics/RoughSets-package
 
+
 Documentation
 -------------
 
@@ -73,24 +74,9 @@ Documentation of the library is included in folder doc and also available online
 
 Re-Build sphinx documentation
 --------------------------
-pip install -r requirements.ci.txt
-sphinx-build -b html ./doc ./doc/_build/html
-sphinx-build -b man ./doc ./doc/_build/man
-
-
-Examples
---------
-
-Examples are stored in folder "lab"
-
-1. Install JupyterLab
-
-pip install jupyter lab
-
-2. Run JupyterLab from folder "lab"
-
-cd lab
-jupyter lab
+pip install -r requirements.ci.txt  
+sphinx-build -b html ./doc ./doc/_build/html  
+sphinx-build -b man ./doc ./doc/_build/man  
 
 
 Recommended packages

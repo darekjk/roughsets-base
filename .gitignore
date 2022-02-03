@@ -45,6 +45,9 @@ coverage.xml
 
 # Spxinx build documentation
 doc/_build/
+doc/_static/
+doc/_templates/
+doc/_*/
 
 # Visual Studio Code
 .vscode/
