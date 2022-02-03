@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/455085651.svg)](https://zenodo.org/badge/latestdoi/455085651)
+
+
 RoughSets library (Pandas version)
 ----------------------------------
 
@@ -8,7 +11,7 @@ which will provide different methods built on RoughSets Theory, like:
 - classifiers
 - post-processing methods
 
-The library doesn't use basic loops so should help to build vary fast extensions when large datasets will be used.
+The library doesn't use basic loops so should help to build very fast extensions when large datasets will be used.
 
 The library implements these main functions:
 - computation of indiscernibilty relations - function: get_indiscernibility_relations
@@ -64,12 +67,6 @@ You can disable running tests for specific dataset in file test_dataset_X.py (X 
 
 For checking of unit tests' results was used algorithms from well known reference library:  
 https://www.rdocumentation.org/packages/RoughSets/topics/RoughSets-package
-
-
-Documentation
--------------
-
-Documentation of the library is included in folder doc and also available online: https://.... 
 
 
 Re-Build sphinx documentation
