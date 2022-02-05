@@ -83,3 +83,9 @@ sklearn-pandas https://github.com/scikit-learn-contrib/sklearn-pandas
 pandas ecosystem: https://pandas.pydata.org/community/ecosystem.html  
 
 
+Citation
+--------
+  
+If You would like to use this library in Your research, please cite it.
+
+Jankowski, D. (2022). Roughsets-base: Python library for base Roughsets methods. (v1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/ZENODO.5957474
