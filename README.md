@@ -71,7 +71,7 @@ https://www.rdocumentation.org/packages/RoughSets/topics/RoughSets-package
 
 Re-Build sphinx documentation
 --------------------------
-pip install -r requirements.ci.txt  
+pip install -r requirements.dev.txt  
 sphinx-build -b html ./doc ./doc/_build/html  
 sphinx-build -b man ./doc ./doc/_build/man  
 
