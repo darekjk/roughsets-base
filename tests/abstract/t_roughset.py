@@ -8,7 +8,7 @@ from pandas.core.indexes.frozen import FrozenList
 
 from roughsets_base.roughset_dt import RoughSetDT
 import pandas as pd
-from pandas import DataFrame, Series, Int64Index
+from pandas import DataFrame, Series
 # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.testing.assert_frame_equal.html
 from pandas.testing import assert_frame_equal, assert_series_equal, assert_index_equal, assert_extension_array_equal
 
@@ -33,7 +33,7 @@ class AbstractClasses:
 
         def get_test_data_series(self, filename):
             filepath = self.get_test_dataset_path(filename)
-            data: Series = pd.read_csv(filepath, squeeze=True)
+            data: Series = pd.read_csv(filepath).squeeze()
 
             return data
 
@@ -49,14 +49,14 @@ class AbstractClasses:
 
             subsets_id = dfa_subsets["subset_id"]
 
-            def get_region_indices(df: DataFrame, region: int) -> Int64Index:
+            def get_region_indices(df: DataFrame, region: int):
                 str_indices = df.iloc[region, 2]
                 if pd.isna(str_indices):
-                    return Int64Index([])
+                    return pd.Index([], dtype='int64')
 
                 indices_list = str_indices.split(" ")
                 indices_list = [int(x) for x in indices_list]
-                result = Int64Index(indices_list)
+                result = pd.Index(indices_list, dtype='int64')
 
                 return result
 
@@ -138,7 +138,7 @@ class AbstractClasses:
 
         def assert_check_eqality_of_2_dataframe_indices(
                 self,
-                index1: Int64Index, index2: Int64Index,
+                index1, index2,
                 check_names=False, check_order=False
         ):
             try:

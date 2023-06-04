@@ -2,7 +2,7 @@ import copy
 import logging
 
 import pandas as pd
-from pandas import DataFrame, Series, Int64Index
+from pandas import DataFrame, Series
 
 from roughsets_base.roughset_si import RoughSetSI
 
@@ -162,7 +162,7 @@ class RoughSetDT(RoughSetSI):
         ind_index_of_lower_approximation: Series = IND_OF_X_by_concept[
             IND_OF_X_by_concept["y_class_count"] == 1
         ][self.ind_index_name]
-        lower_approximation_of_X: Int64Index = X_IND[
+        lower_approximation_of_X = X_IND[
             X_IND[self.ind_index_name].isin(ind_index_of_lower_approximation)
         ].index
 
@@ -170,29 +170,29 @@ class RoughSetDT(RoughSetSI):
         ind_index_of_boundary_region: Series = IND_OF_X_by_concept[
             IND_OF_X_by_concept["y_class_count"] > 1
         ][self.ind_index_name]
-        boundary_region_of_X: Int64Index = X_IND[
+        boundary_region_of_X = X_IND[
             X_IND[self.ind_index_name].isin(ind_index_of_boundary_region)
         ].index
 
         # Get a upper approximation (if only one concept) or sum of upper approximations (if more than one concept)
         # (DataFrame's indexes of dataset X)
-        upper_approximation_of_X: Int64Index = lower_approximation_of_X.append(boundary_region_of_X).sort_values()
+        upper_approximation_of_X = lower_approximation_of_X.append(boundary_region_of_X)
 
         # Get a negative region (DataFrame's indexes of dataset X)
-        negative_region_of_X = self.X.index.delete(upper_approximation_of_X).sort_values()
+        negative_region_of_X = self.X.index.difference(upper_approximation_of_X)
 
         # Get a negative region (DataFrame's indexes of dataset X) (method 2)
         # IND_OF_X_negative_by_concept = IND_OF_X_EXT[
         #     ~IND_OF_X_EXT[self.ind_index_name].isin(IND_concept)
         # ]
         # ind_index_of_negative_region: Series = IND_OF_X_negative_by_concept[self.ind_index_name]
-        # negative_region_of_X: Int64Index = X_IND[
+        # negative_region_of_X = X_IND[
         #     X_IND[self.ind_index_name].isin(ind_index_of_negative_region)
         # ].index
 
-        return lower_approximation_of_X, boundary_region_of_X, upper_approximation_of_X, negative_region_of_X
+        return lower_approximation_of_X.sort_values(), boundary_region_of_X.sort_values(), upper_approximation_of_X.sort_values(), negative_region_of_X.sort_values()
 
-    def get_approximation_objects(self, approximation_indices: Int64Index) -> (DataFrame, Series):
+    def get_approximation_objects(self, approximation_indices) -> (DataFrame, Series):
         """
         Get subset (defined by approximation_indices) of X and y objects
         """

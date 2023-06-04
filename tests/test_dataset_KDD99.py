@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from pandas import Int64Index
 
 from tests.abstract.t_roughset import AbstractClasses
 
@@ -59,16 +58,16 @@ class TestRoughSet(AbstractClasses.TBase):
             return "Test not enabled"
 
         filename = self.get_test_dataset_path("kdd_positive_region_A.zip")
-        true_positive_region_of_X = pd.read_csv(filename, compression='zip', header=0, squeeze=True)
-        true_positive_region_of_X: Int64Index = Int64Index(true_positive_region_of_X)
+        true_positive_region_of_X = pd.read_csv(filename, compression='zip', header=0).squeeze()
+        true_positive_region_of_X = pd.Index(true_positive_region_of_X, dtype='int64')
 
         filename = self.get_test_dataset_path("kdd_boundary_region_A.csv")
-        true_boundary_region_of_X = pd.read_csv(filename, header=0, squeeze=True)
-        true_boundary_region_of_X = Int64Index(true_boundary_region_of_X)
+        true_boundary_region_of_X = pd.read_csv(filename, header=0).squeeze()
+        true_boundary_region_of_X = pd.Index(true_boundary_region_of_X, dtype='int64')
 
         filename = self.get_test_dataset_path("kdd_negative_region_A.csv")
-        true_negative_region_of_X = pd.read_csv(filename, header=0, squeeze=True)
-        true_negative_region_of_X = Int64Index(true_negative_region_of_X)
+        true_negative_region_of_X = pd.read_csv(filename, header=0).squeeze()
+        true_negative_region_of_X = pd.Index(true_negative_region_of_X, dtype='int64')
 
         self.rough_set.get_indiscernibility_relations()
 
@@ -90,16 +89,16 @@ class TestRoughSet(AbstractClasses.TBase):
         subset = [0, 1]
 
         filename = self.get_test_dataset_path("kdd_positive_region_B.zip")
-        true_positive_region_of_X = pd.read_csv(filename, compression='zip', header=0, squeeze=True)
-        true_positive_region_of_X: Int64Index = Int64Index(true_positive_region_of_X)
+        true_positive_region_of_X = pd.read_csv(filename, compression='zip', header=0).squeeze()
+        true_positive_region_of_X = pd.Index(true_positive_region_of_X, dtype='int64')
 
         filename = self.get_test_dataset_path("kdd_boundary_region_B.zip")
-        true_boundary_region_of_X = pd.read_csv(filename, header=0, squeeze=True)
-        true_boundary_region_of_X = Int64Index(true_boundary_region_of_X)
+        true_boundary_region_of_X = pd.read_csv(filename, header=0).squeeze()
+        true_boundary_region_of_X = pd.Index(true_boundary_region_of_X, dtype='int64')
 
         filename = self.get_test_dataset_path("kdd_negative_region_B.csv")
-        true_negative_region_of_X = pd.read_csv(filename, header=0, squeeze=True)
-        true_negative_region_of_X = Int64Index(true_negative_region_of_X)
+        true_negative_region_of_X = pd.read_csv(filename, header=0).squeeze()
+        true_negative_region_of_X = pd.Index(true_negative_region_of_X, dtype='int64')
 
         # self.rough_set.get_indiscernibility_relations(
         #     subset=subset

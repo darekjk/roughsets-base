@@ -2,7 +2,7 @@ import copy
 import logging
 
 import pandas as pd
-from pandas import DataFrame, Series, Int64Index
+from pandas import DataFrame, Series
 
 
 class RoughSetSI:
